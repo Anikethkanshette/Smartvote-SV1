@@ -138,6 +138,8 @@ UI inspiration from modern admin dashboards and design systems.
 
 🌐 Portfolio: aniketh.info
 
+🌐 Website: personal.aniketh.info
+
 💼 LinkedIn: Aniketh Kanshette
 
 📷 Instagram: @ANIKETH.PATIL.KANSHETTE
