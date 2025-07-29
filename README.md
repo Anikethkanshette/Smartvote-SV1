@@ -21,7 +21,7 @@ SmartVote is a modern, secure, and user-friendly college election system that in
 
 ## 🖼️ Demo
 
-![SmartVote UI Preview](./preview.png) <!-- Add a real screenshot or remove this line -->
+https://smartvoter.aniketh.info/
 
 ---
 
