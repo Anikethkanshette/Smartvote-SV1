@@ -327,6 +327,18 @@ User Input → Validation → Processing → Storage → Display
 
 ---
 
+## Connect with Me
+
+🌐 Portfolio: aniketh.info
+
+🌐 Website: personal.aniketh.info
+
+💼 LinkedIn: Aniketh Kanshette
+
+📷 Instagram: @ANIKETH.PATIL.KANSHETTE
+
+---
+
 **SmartVote** - Revolutionizing college elections through secure, transparent, and accessible digital democracy.
 
 For technical support or feature requests, please refer to the project documentation or contact the development team.
