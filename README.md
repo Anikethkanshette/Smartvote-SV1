@@ -1,344 +1,139 @@
-# SmartVote - College Election Management System
+# SmartVote — SV1
 
-## 🗳️ Project Overview
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://smartvoter.aniketh.info/) [![Built With](https://img.shields.io/badge/Built%20With-JavaScript-yellow)](https://www.javascript.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/Anikethkanshette/Smartvote-SV1)](https://github.com/Anikethkanshette/Smartvote-SV1/commits/main)
 
-SmartVote is a comprehensive, secure, and transparent college election management system that leverages modern web technologies including **MediaPipe + TensorFlow.js** for biometric face authentication. The system provides a complete solution for managing college elections from candidate registration to result publication.
+<p align="center">
+  <a href="https://smartvoter.aniketh.info/">
+    <img src="docs/screenshots/hero.png" alt="SmartVote hero screenshot" width="100%" style="max-width:1100px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);"/>
+  </a>
+</p>
 
-## 🚀 Key Features
-
-### 🔐 Advanced Security
-- **Biometric Face Authentication** using MediaPipe + TensorFlow.js
-- **Fingerprint Authentication** via WebAuthn API
-- **Multi-factor Authentication** with traditional username/password fallback
-- **Role-based Access Control** (Super Admin, Admin, Candidate, Voter)
-- **Vote Receipt System** with unique verification IDs
-- **Audit Trail** with IP tracking and timestamp logging
-
-### 📱 Progressive Web App (PWA)
-- **Offline Functionality** with service worker caching
-- **Mobile Installation** support for iOS and Android
-- **Push Notifications** for election updates
-- **Background Sync** for offline vote submission
-- **Responsive Design** optimized for all devices
-
-### 🎯 Election Management
-- **Multi-role Dashboard** with role-specific interfaces
-- **Candidate Application System** with approval workflow
-- **Real-time Vote Counting** and result display
-- **Election Configuration** with customizable parameters
-- **QR Code Generation** for quick access and voting
-- **Comprehensive Analytics** and reporting
-
-## 🛠️ Technology Stack
-
-### Frontend Technologies
-- **HTML5** - Semantic markup with accessibility features
-- **CSS3** - Modern styling with CSS Grid, Flexbox, and animations
-- **Vanilla JavaScript** - ES6+ with modern browser APIs
-- **MediaPipe** - Google's ML framework for face detection
-- **TensorFlow.js** - Machine learning in the browser
-- **WebAuthn API** - Fingerprint authentication
-- **Service Workers** - PWA functionality and offline support
-
-### Design System
-- **Color Palette**: 3-5 color system with blue primary (#3b82f6)
-- **Typography**: Inter font family with responsive scaling
-- **Layout**: Mobile-first responsive design
-- **Components**: Modular UI components with consistent styling
-- **Animations**: Smooth transitions and 3D effects
-
-### Browser APIs Used
-- **MediaDevices API** - Camera access for face capture
-- **Canvas API** - Image processing and manipulation
-- **Web Storage API** - Local data persistence
-- **Notification API** - Push notification support
-- **Geolocation API** - Location tracking for security
-- **Intersection Observer** - Performance optimizations
-
-## 📁 Project Structure
-
-\`\`\`
-smartvote/
-├── index.html              # Main application entry point
-├── styles.css              # Complete styling system
-├── script.js               # Core application logic
-├── manifest.json           # PWA configuration
-├── sw.js                   # Service worker for offline support
-├── smartvote-logo.png      # Application logo
-└── README.md               # Project documentation
-\`\`\`
-
-## 🏗️ System Architecture
-
-### Authentication Flow
-1. **Registration Process**
-   - User creates account with basic information
-   - Optional biometric registration (face/fingerprint)
-   - Role assignment and verification
-   - Profile completion with photo upload
-
-2. **Login Process**
-   - Traditional username/password authentication
-   - Biometric authentication options
-   - Multi-factor verification
-   - Session management and security
-
-### Election Workflow
-1. **Election Creation** (Admin)
-   - Configure election parameters
-   - Set candidate limits and voter caps
-   - Define voting periods and rules
-
-2. **Candidate Registration**
-   - Users apply to become candidates
-   - Submit qualifications and achievements
-   - Admin approval/rejection process
-
-3. **Voting Process**
-   - Secure ballot casting with face verification
-   - Vote receipt generation
-   - Real-time vote counting
-   - Duplicate vote prevention
-
-4. **Results Publication**
-   - Automated result calculation
-   - Public result display
-   - Analytics and reporting
-   - Audit trail maintenance
-
-## 🔧 Installation & Setup
-
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- HTTPS connection (required for camera access)
-- Local web server for development
-
-### Quick Start
-1. **Clone or Download** the project files
-2. **Serve via HTTPS** using a local web server:
-   \`\`\`bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Using PHP
-   php -S localhost:8000
-   \`\`\`
-3. **Access Application** at `https://localhost:8000`
-4. **Register Account** and explore features
-
-### PWA Installation
-- **Desktop**: Click install prompt or use browser menu
-- **Mobile**: Add to home screen via browser options
-- **Offline Access**: Automatic caching for offline use
-
-## 👥 User Roles & Permissions
-
-### Super Admin
-- **System Management**: Complete system control
-- **User Management**: Create/modify all user accounts
-- **Election Oversight**: Monitor all elections
-- **Security Settings**: Configure system security
-
-### Admin
-- **Election Management**: Create and manage elections
-- **Candidate Approval**: Review candidate applications
-- **Result Publication**: Publish election results
-- **User Support**: Assist voters and candidates
-
-### Candidate
-- **Profile Management**: Update candidate information
-- **Campaign Materials**: Upload photos and achievements
-- **Application Status**: Track approval status
-- **Vote Monitoring**: View real-time vote counts
-
-### Voter
-- **Secure Voting**: Cast votes with biometric verification
-- **Vote Verification**: Verify vote with receipt ID
-- **Election Information**: View candidate profiles
-- **Result Access**: View published results
-
-## 🔒 Security Features
-
-### Biometric Authentication
-- **Face Detection**: MediaPipe-powered face recognition
-- **Image Processing**: TensorFlow.js enhancement algorithms
-- **Similarity Matching**: 75% threshold for authentication
-- **Liveness Detection**: Anti-spoofing measures
-
-### Data Protection
-- **Local Storage**: Encrypted data storage
-- **Session Security**: Secure session management
-- **Audit Logging**: Comprehensive activity tracking
-- **Privacy Controls**: GDPR-compliant data handling
-
-### Vote Security
-- **Unique Receipts**: Cryptographic vote verification
-- **Duplicate Prevention**: Multi-layer vote validation
-- **Anonymous Voting**: Privacy-preserving vote casting
-- **Tamper Detection**: Integrity verification systems
-
-## 📊 Features Deep Dive
-
-### Face Authentication System
-\`\`\`javascript
-// MediaPipe Integration
-const faceDetection = new FaceDetection({
-  model: 'short_range',
-  minDetectionConfidence: 0.5
-});
-
-// TensorFlow.js Enhancement
-const enhanceImage = (imageData) => {
-  return tf.tidy(() => {
-    const tensor = tf.browser.fromPixels(imageData);
-    return tf.image.adjustContrast(tensor, 0.2);
-  });
-};
-\`\`\`
-
-### PWA Capabilities
-- **Offline Voting**: Queue votes when offline
-- **Background Sync**: Automatic sync when online
-- **Push Notifications**: Election reminders and updates
-- **App-like Experience**: Native app feel on mobile
-
-### Real-time Features
-- **Live Vote Counting**: WebSocket-like updates
-- **Instant Notifications**: Real-time status updates
-- **Dynamic UI Updates**: Reactive interface changes
-- **Performance Monitoring**: Real-time system metrics
-
-## 🎨 UI/UX Design
-
-### Design Principles
-- **Accessibility First**: WCAG 2.1 AA compliance
-- **Mobile Responsive**: Touch-friendly interface
-- **Intuitive Navigation**: Clear user flows
-- **Visual Hierarchy**: Consistent information architecture
-
-### Color System
-- **Primary**: Blue (#3b82f6) - Trust and security
-- **Secondary**: Purple (#8b5cf6) - Innovation
-- **Success**: Green (#10b981) - Positive actions
-- **Neutrals**: Gray scale for balance
-
-### Typography
-- **Headings**: Inter Bold (600-800 weights)
-- **Body Text**: Inter Regular (400-500 weights)
-- **Responsive Scaling**: Fluid typography system
-
-## 🔄 API Integration Points
-
-### External Services
-- **MediaPipe Models**: Face detection ML models
-- **TensorFlow.js**: Browser-based ML processing
-- **WebAuthn**: Biometric authentication
-- **Geolocation**: Location-based security
-
-### Data Flow
-\`\`\`
-User Input → Validation → Processing → Storage → Display
-     ↓           ↓           ↓          ↓        ↓
-  Security → Encryption → Database → Cache → UI Update
-\`\`\`
-
-## 📱 Mobile Optimization
-
-### Responsive Breakpoints
-- **Mobile**: < 768px - Single column layout
-- **Tablet**: 768px - 1024px - Adaptive grid
-- **Desktop**: > 1024px - Full feature set
-
-### Touch Interactions
-- **Gesture Support**: Swipe and tap optimizations
-- **Button Sizing**: 44px minimum touch targets
-- **Haptic Feedback**: Vibration for important actions
-
-## 🚀 Performance Optimizations
-
-### Loading Performance
-- **Critical CSS**: Inline critical styles
-- **Lazy Loading**: Progressive image loading
-- **Code Splitting**: Modular JavaScript loading
-- **Caching Strategy**: Aggressive static asset caching
-
-### Runtime Performance
-- **Virtual Scrolling**: Large list optimizations
-- **Debounced Inputs**: Reduced API calls
-- **Memory Management**: Efficient object lifecycle
-- **Battery Optimization**: Reduced background processing
-
-## 🧪 Testing Strategy
-
-### Browser Compatibility
-- **Chrome**: Full feature support
-- **Firefox**: Core functionality
-- **Safari**: iOS optimization
-- **Edge**: Windows integration
-
-### Device Testing
-- **iOS Devices**: iPhone/iPad compatibility
-- **Android Devices**: Various screen sizes
-- **Desktop**: Cross-platform support
-
-## 🔮 Future Enhancements
-
-### Planned Features
-- **Blockchain Integration**: Immutable vote records
-- **AI Analytics**: Predictive election insights
-- **Multi-language Support**: Internationalization
-- **Advanced Biometrics**: Iris and voice recognition
-
-### Scalability Improvements
-- **Database Integration**: PostgreSQL/MongoDB support
-- **Cloud Deployment**: AWS/Azure integration
-- **Load Balancing**: High-availability architecture
-- **Microservices**: Modular backend services
-
-## 📞 Support & Maintenance
-
-### Troubleshooting
-- **Camera Issues**: Check HTTPS and permissions
-- **Face Recognition**: Ensure good lighting
-- **Offline Mode**: Verify service worker registration
-- **Performance**: Clear cache and reload
-
-### Browser Requirements
-- **Minimum Versions**: Chrome 80+, Firefox 75+, Safari 13+
-- **Required Features**: Camera API, Local Storage, Service Workers
-- **Recommended**: Hardware acceleration enabled
-
-## 📄 License & Credits
-
-### Open Source Components
-- **MediaPipe**: Apache 2.0 License
-- **TensorFlow.js**: Apache 2.0 License
-- **Font Awesome**: SIL OFL 1.1 License
-- **Inter Font**: SIL OFL 1.1 License
-
-### Development Team
-- **Architecture**: Modern web standards
-- **Security**: Industry best practices
-- **Design**: User-centered approach
-- **Testing**: Comprehensive validation
+> Modern, secure and mobile-first college election system with face-authentication and a clean admin dashboard. Built for reliability, accessibility, and ease of use.
 
 ---
 
-## Connect with Me
+Why this README is organized
+- Quick visual summary and direct demo link for reviewers
+- Clear setup and deployment steps for maintainers
+- Detailed documentation sections for face-auth integration, configuration, and security notes
 
-🌐 Portfolio: aniketh.info
-
-🌐 Website: personal.aniketh.info
-
-💼 LinkedIn: Aniketh Kanshette
-
-📷 Instagram: @ANIKETH.PATIL.KANSHETTE
+Table of contents
+- Introduction
+- Live Demo
+- Key Features
+- Screenshots
+- Quick Start (Run locally)
+- Deployment (Static hosting & PWA)
+- Configuration & Environment Variables
+- Face Authentication — Integration Guide
+- Architecture & Data Flow
+- API Endpoints (reference)
+- Security & Privacy Notes
+- Testing & QA
+- Contributing Guide
+- Changelog & Releases
+- License & Author
 
 ---
 
-**SmartVote** - Revolutionizing college elections through secure, transparent, and accessible digital democracy.
+Introduction
+SmartVote-SV1 is an opinionated reference implementation of a college/institution voting platform that prioritizes:
+- Secure voter verification using face-authentication
+- Mobile-first responsive UI for voters and admins
+- Lightweight front-end demo with clear extension points for production backends
 
-For technical support or feature requests, please refer to the project documentation or contact the development team.
+Live Demo
+- Explore the live demo: https://smartvoter.aniketh.info/ (Super Admin view shows system metrics, approvals and candidate flows)
+
+Key Features
+- Face-authenticated voter registration and verification (configurable SDK)
+- Clean Super Admin dashboard: users, active elections, pending approvals, face-registered count
+- Candidate application and approvals flow
+- PWA-ready front-end with install prompt for mobile users
+- Simple, extensible HTML/JS/CSS codebase that can be wired to any backend
+
+Screenshots (add high-quality images to docs/screenshots/)
+- Hero banner: docs/screenshots/hero.png (recommended 1280×480)
+- Dashboard: docs/screenshots/dashboard.png (recommended 1280×720)
+- Face auth flow (GIF): docs/screenshots/face-auth-demo.gif
+
+Quick Start (Run locally)
+1. Clone the repository
+```bash
+git clone https://github.com/Anikethkanshette/Smartvote-SV1.git
+cd Smartvote-SV1
+```
+2. Run a local static server (recommended)
+```bash
+# Python 3
+python -m http.server 8000
+# or using Node http-server (install if needed)
+npm install -g http-server
+http-server -p 8080
+```
+3. Open http://localhost:8000 (or the port you chose)
+
+Deployment (Static hosting & PWA)
+- Recommended: GitHub Pages / Netlify / Vercel. Just point the site to the repo root.
+- Ensure docs/screenshots files are committed to keep README hero and dashboard showing correctly on the hosted README.
+
+Configuration & Environment Variables
+- config.js (or equivalent) should contain endpoint and SDK configuration keys. Example variables to provide in production:
+  - API_BASE_URL=https://api.yourdomain.com
+  - FACE_SDK_KEY=
+  - PWA_NAME=SmartVote
+
+Face Authentication — Integration Guide
+This project ships with a placeholder integration. To integrate a real face-auth provider: 
+1. Choose provider (examples: Face++ / AWS Rekognition / Microsoft Face API / on-device models like face-api.js).
+2. Replace the face capture and matching code in src/face-auth.js (or the UI handler) with the provider SDK calls.
+3. Typical flow:
+   - User registers: capture photo(s) -> store face template/hash + user id (server or encrypted DB).
+   - At vote time: capture live image -> match against stored template -> allow voting if confidence threshold met.
+4. Security: perform matching server-side if you need to keep templates private, or use secure enclaves for on-device matching.
+
+Architecture & Data Flow
+- UI (static front-end) 
+- REST API or server mock 
+- Database (users, elections, votes)
+- Face templates: Optionally encrypted and stored separately from PII.
+- Minimal, modular front-end makes it easy to plug in real backends or mocked flows for demos.
+
+API Endpoints (Reference)
+- POST /api/register - Register user (body: { name, email, roll, faceTemplate })
+- POST /api/login - Authenticate (email/roll + password or OTP)
+- POST /api/face-match - Match face image to existing templates (returns match confidence)
+- GET /api/elections - List elections
+- POST /api/elections - Create election (admin)
+- POST /api/vote - Submit vote payload
+
+Security & Privacy Notes
+- Face biometrics are highly sensitive. When enabling face-auth, follow local laws and institutional policies.
+- Store face templates encrypted at rest; store PII separately and minimize linkability.
+- Use HTTPS everywhere and secure your API keys (do not embed production keys in client-side code).
+
+Testing & QA
+- Manual testing checklist: registration, face registration, candidate application, admin approvals, voting flow on mobile and desktop.
+- Recommended automated tests: unit tests for core JS utilities, end-to-end tests (Playwright or Cypress) for the full flow.
+
+Contributing Guide
+- Fork the repo, create a branch named feat/short-desc or fix/short-desc, open a PR to main.
+- Add clear issue descriptions and link PRs to issues where applicable.
+- Suggested labels: good first issue, enhancement, bug, help wanted.
+
+Changelog & Releases
+- Use semantic commits (feat/fix/chore/docs) and tag releases with vMAJOR.MINOR.PATCH. Example: v1.0.0
+
+License & Author
+- MIT License — see LICENSE file for details.
+- Author: Aniketh Kanshette — https://personal.aniketh.info — https://github.com/Anikethkanshette
+
+Support & Contact
+- For questions or improvements, open an issue on GitHub or reach out via the GitHub profile.
+
+---
+
+Thank you for using SmartVote! If you want, I can also:
+- Add the screenshot files to docs/screenshots from the live demo (if you provide images),
+- Create a release and update the repo tags,
+- Or open a PR instead of pushing to main if you’d prefer a review flow.
